@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>HURRICANE vs VOLCANO — Interactive LIVE Game</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1><span class="blue">HURRICANE</span> <span class="vs">VS</span> <span class="orange">VOLCANO</span></h1>
+    <div id="badges">
+      <span id="mode-badge" class="badge demo">DEMO</span>
+      <span id="live-badge" class="badge">👁 <span id="viewers">0</span> watching</span>
+      <button id="sound-btn" title="Natural sounds on/off">🔇 Sound</button>
+    </div>
+  </header>
+
+  <div id="instruction">Comment <b class="blue">1</b> for Hurricane &nbsp;•&nbsp; Comment <b class="orange">2</b> for Volcano</div>
+
+  <div id="timer-wrap">
+    <div id="round-label">ROUND 1</div>
+    <div id="timer">60</div>
+    <div id="timer-bar"><div id="timer-fill"></div></div>
+  </div>
+
+  <div id="scoreboard">
+    <div class="team hurricane-team" id="panel-hurricane" role="button" tabindex="0">
+      <div class="team-name">🌪 HURRICANE</div>
+      <div class="score" id="score-hurricane">0</div>
+      <div class="bar-track"><div class="bar-fill blue-fill" id="bar-hurricane"></div></div>
+      <div class="wins">🏆 Rounds won: <span id="wins-hurricane">0</span></div>
+      <div class="tap-hint">Tap to vote (DEMO)</div>
+    </div>
+    <div class="team volcano-team" id="panel-volcano" role="button" tabindex="0">
+      <div class="team-name">🌋 VOLCANO</div>
+      <div class="score" id="score-volcano">0</div>
+      <div class="bar-track"><div class="bar-fill orange-fill" id="bar-volcano"></div></div>
+      <div class="wins">🏆 Rounds won: <span id="wins-volcano">0</span></div>
+      <div class="tap-hint">Tap to vote (DEMO)</div>
+    </div>
+  </div>
+
+  <canvas id="game-canvas"></canvas>
+
+  <div id="winner-banner" class="hidden">
+    <div id="winner-text">HURRICANE WINS!</div>
+    <div id="winner-sub">Next round starts soon…</div>
+  </div>
+
+  <div id="feed-wrap">
+    <div id="feed-title">⚡ LIVE FEED</div>
+    <ul id="feed"></ul>
+  </div>
+
+  <footer>
+    <span id="totals">Votes: 0 • Gifts: 0</span>
+    <span id="howto">Tip: gifts = +25 power burst!</span>
+  </footer>
+</div>
+<script src="/static/app.js"></script>
+</body>
+</html>
